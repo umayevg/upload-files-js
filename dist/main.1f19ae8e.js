@@ -450,26 +450,6 @@ function _arrayWithoutHoles(arr) { if (Array.isArray(arr)) return _arrayLikeToAr
 
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) { arr2[i] = arr[i]; } return arr2; }
 
-var element = function element(tag) {
-  var classes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-  var content = arguments.length > 2 ? arguments[2] : undefined;
-  var node = document.createElement(tag);
-
-  if (classes.length) {
-    var _node$classList;
-
-    (_node$classList = node.classList).add.apply(_node$classList, _toConsumableArray(classes));
-  }
-
-  if (content) {
-    node.textContent = content;
-  }
-
-  return node;
-};
-
-function noop() {}
-
 function upload(selector) {
   var options = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : {};
   var files = [];
@@ -551,7 +531,28 @@ function upload(selector) {
   input.addEventListener("change", changeHandler);
   preview.addEventListener('click', removeHandler);
   uploadBtn.addEventListener('click', uploadHandler);
-}
+} // creates element
+
+
+var element = function element(tag) {
+  var classes = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+  var content = arguments.length > 2 ? arguments[2] : undefined;
+  var node = document.createElement(tag);
+
+  if (classes.length) {
+    var _node$classList;
+
+    (_node$classList = node.classList).add.apply(_node$classList, _toConsumableArray(classes));
+  }
+
+  if (content) {
+    node.textContent = content;
+  }
+
+  return node;
+};
+
+function noop() {}
 
 function bytesToSize(bytes) {
   var sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB'];
@@ -568,6 +569,7 @@ var _upload = require("./upload");
   multipleFiles: true,
   accept: [".jpg", ".png", ".gif"],
   onUpload: function onUpload(files) {
+    // here uploading logic
     files.forEach(function (file) {
       console.log(file);
     });
@@ -601,7 +603,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "63175" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "49312" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

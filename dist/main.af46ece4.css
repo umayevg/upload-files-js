@@ -11,12 +11,16 @@ body {
     margin: 0 auto;
 }
 
+/* Card */
+
+
 .card {
     border-radius: 6px;
     background: #fff;
     padding: 1rem;
     box-shadow: 2px 3px 10px rgba(0, 0, 0, 0.2);
 }
+/* Button */
 
 .btn {
     color: #42b983;
@@ -49,6 +53,13 @@ body {
     cursor: pointer;
     opacity: 0.8;
 }
+
+input[type=file] {
+    display: none;
+}
+
+
+/* Image preview */
 
 
 .preview {

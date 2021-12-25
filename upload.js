@@ -1,21 +1,6 @@
 import uniqid from 'uniqid';
 
-const element = (tag, classes = [], content) => {
-  const node = document.createElement(tag)
 
-  if (classes.length) {
-    node.classList.add(...classes)
-  }
-
-  if (content) {
-    node.textContent = content
-  }
-
-  return node
-}
-
-function noop() {
-}
 
 export function upload(selector, options = {}) {
   let files = []
@@ -109,6 +94,24 @@ export function upload(selector, options = {}) {
   uploadBtn.addEventListener('click', uploadHandler)
 }
 
+
+// creates element
+const element = (tag, classes = [], content) => {
+  const node = document.createElement(tag)
+
+  if (classes.length) {
+    node.classList.add(...classes)
+  }
+
+  if (content) {
+    node.textContent = content
+  }
+
+  return node
+}
+
+function noop() {
+}
 
 function bytesToSize(bytes) {
   const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB']
